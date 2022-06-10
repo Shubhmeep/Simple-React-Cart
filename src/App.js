@@ -1,9 +1,9 @@
+import Cart from "./Cart";
 
-
-function App() {
+function App() {   //app is a function based component
   return (
     <div className="App">
-      <h1>Cart</h1>
+      <Cart/>
     </div>
   );
 }
