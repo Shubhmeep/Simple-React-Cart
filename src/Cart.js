@@ -11,7 +11,7 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
         return(             
             <div className='cart-item ' style={styles.container}>
                 <div className='left-block'>
-                    <img style={styles.Image}/>
+                    <img style={styles.Image} alt=''/>
                 </div>
 
                 <div className='right-block'>
@@ -21,6 +21,10 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
 
                     <div className='cart-item-actions '>
                         {/*buttons*/}
+
+                        <img alt='increase' className='action-icons' src='https://cdn-icons.flaticon.com/png/512/5974/premium/5974633.png?token=exp=1654882953~hmac=240fa373f7b16312764b4a54ebd527e1'/>
+                        <img alt='decrease' className='action-icons' src='https://cdn-icons-png.flaticon.com/512/334/334047.png'/>
+                        <img alt='delete' className='action-icons' src='https://cdn-icons.flaticon.com/png/512/3687/premium/3687412.png?token=exp=1654883035~hmac=9b0192a7c9c6cb64911d661ab2244db5'/>
                     </div>
 
 
@@ -35,8 +39,8 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
 const styles = {
 
     Image:{
-        height:100,
-        width:100,
+        height:150,
+        width:150,
         borderRadius:4,
         background:'#ccc'
     },
@@ -44,8 +48,6 @@ const styles = {
         display: 'inline-flex',
         margin: 20,
     },
-
-
 
 };
 
