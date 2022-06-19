@@ -6,7 +6,7 @@ import React from 'react';
 class Cart extends React.Component{   //our class 'cart' is inheriting features from the component library in react module
 
     //let's create a state, state is nothing but JS objects.
-    constructor(){
+    constructor(){       //special method used to initialise an object is called constructor
         super();                       //super() is basically inheriting the component library features back into our constructor
         this.state = {
             price:999,
@@ -14,11 +14,45 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
             Qty:1,
             img:''
         }
+
+        
     }
 
-    changeState(){
-        console.log('test');
-    }
+    changeState = () => {
+        
+        console.log('this',this.state);
+
+
+    //setstate() Form-1 = creating an object within the setstate()
+
+    //     this.setState({                         //what this setstate() will do it will go to render() function and render the increase component with the updated value. this is known as 'Shallow Merging'
+    //         Qty:this.state.Qty+1                //basically setstate will go to this.state object and will pick only the Qty key from it. then as we discussed render() will be called with the updated data. 
+    //     });     //setstate is basically coming from the 'component' class in react......see React.Component mentioned above
+
+
+
+    //setstate() Form-2 = if prevState required use this one
+
+    this.setState((prevState) => {
+        return{
+            Qty: prevState.Qty+1
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     }
 
     //now to convert this class based component into react based component we need to use a function called render()
     render (){              //this render() will return a JSX (javascript XML)  that will basically describe the UI of the component
