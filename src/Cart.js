@@ -32,7 +32,11 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
                             onClick={() => this.props.IncreasechangeState(this.props.product) }/>     {/*here e are storing the reference of the changeState() in onclick var*/}
 
 
-                        <img alt='decrease' className='action-icons' src='https://cdn-icons-png.flaticon.com/512/334/334047.png' onClick={this.DecreasechangeState}/>
+                        <img alt='decrease' className='action-icons' 
+                        src='https://cdn-icons-png.flaticon.com/512/334/334047.png' 
+                        onClick={() => this.props.DecreasechangeState(this.props.product) }/> 
+
+
                         <img alt='delete' className='action-icons' src='https://cdn-icons-png.flaticon.com/512/6861/6861362.png'/>
                     </div>
 

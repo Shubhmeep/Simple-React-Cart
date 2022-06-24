@@ -16,10 +16,20 @@ class List extends React.Component{
                 img:'',
             id:2}]
         }
-
-        
+ 
     }
-
+    
+    handleDecreaseQuantity = (item) =>{
+        const { products } = this.state;
+        const index = products.indexOf(item);
+        if(products[index].Qty>0){
+            products[index].Qty-=1;
+        }
+        
+        this.setState({
+            products
+        })
+    }
     handleIncreaseQuantity = (item) => {
         const { products } = this.state;
         const index = products.indexOf(item);
@@ -39,6 +49,7 @@ class List extends React.Component{
                     product = {item} 
                     key={item.id}
                     IncreasechangeState = {this.handleIncreaseQuantity}
+                    DecreasechangeState = {this.handleDecreaseQuantity}
                     
                     />
                 })}
