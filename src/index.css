@@ -36,3 +36,7 @@ cart-item {
     cursor: pointer;
 
   }
+.cart{
+  display: flex;
+  flex-direction: column;
+}
