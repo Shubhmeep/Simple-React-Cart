@@ -19,14 +19,26 @@ class List extends React.Component{
 
         
     }
+
+    handleIncreaseQuantity = (item) => {
+        const { products } = this.state;
+        const index = products.indexOf(item);
+
+        products[index].Qty+=1;
+        this.setState({
+            products
+        })
+    }
     render() {
         const {products} = this.state;
         return (
             <div className="cart">
              
                 {products.map((item)=>{
-                    return <Cart product = {item} 
+                    return <Cart 
+                    product = {item} 
                     key={item.id}
+                    IncreasechangeState = {this.handleIncreaseQuantity}
                     
                     />
                 })}

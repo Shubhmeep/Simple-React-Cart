@@ -5,72 +5,7 @@ import React from 'react';
 
 class Cart extends React.Component{   //our class 'cart' is inheriting features from the component library in react module
 
-    IncreasechangeState = () => 
-    {
-        
-        //setstate() Form-1 = creating an object within the setstate()
-
-        //     this.setState({                         //what this setstate() will do it will go to render() function and render the increase component with the updated value. this is known as 'Shallow Merging'
-        //         Qty:this.state.Qty+1                //basically setstate will go to this.state object and will pick only the Qty key from it. then as we discussed render() will be called with the updated data. 
-        //     });     //setstate is basically coming from the 'component' class in react......see React.Component mentioned above
-
-
-
-        //setstate() Form-2 = if prevState required use this one
-
-        this.setState((prevState) => {
-            return{
-                Qty: prevState.Qty+1
-            }
-        }, () => {
-            console.log('this.state = ', this.state);
-        });
-
-    }
-
-
-
-    DecreasechangeState = () => 
-    {
-        
-        //setstate() Form-1 = creating an object within the setstate()
-
-        //     this.setState({                         //what this setstate() will do it will go to render() function and render the increase component with the updated value. this is known as 'Shallow Merging'
-        //         Qty:this.state.Qty+1                //basically setstate will go to this.state object and will pick only the Qty key from it. then as we discussed render() will be called with the updated data. 
-        //     });     //setstate is basically coming from the 'component' class in react......see React.Component mentioned above
-
-
-
-        //setstate() Form-2 = if prevState required use this one
-
-        this.setState((prevState) => {                     //NOTE = setState() call is Async in nature
-            if(prevState.Qty>0){
-
-                return{
-
-                    Qty: prevState.Qty-1
-                
-                }
-
-            }
-     
-               
-        },() => {
-            console.log('this.state = ', this.state);
-        });
-
-    }
-
-
-
-
-
-
-
-
-
-
-
+ 
 
     //now to convert this class based component into react based component we need to use a function called render()
     render (){              //this render() will return a JSX (javascript XML)  that will basically describe the UI of the component
@@ -94,7 +29,7 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
 
                         <img alt='increase' className='action-icons' 
                             src='https://cdn-icons-png.flaticon.com/512/1828/1828574.png'
-                            onClick={this.IncreasechangeState}/>     {/*here e are storing the reference of the changeState() in onclick var*/}
+                            onClick={() => this.props.IncreasechangeState(this.props.product) }/>     {/*here e are storing the reference of the changeState() in onclick var*/}
 
 
                         <img alt='decrease' className='action-icons' src='https://cdn-icons-png.flaticon.com/512/334/334047.png' onClick={this.DecreasechangeState}/>
