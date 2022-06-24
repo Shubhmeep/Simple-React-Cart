@@ -5,19 +5,6 @@ import React from 'react';
 
 class Cart extends React.Component{   //our class 'cart' is inheriting features from the component library in react module
 
-    //let's create a state, state is nothing but JS objects.
-    constructor(){       //special method used to initialise an object is called constructor
-        super();                       //super() is basically inheriting the component library features back into our constructor
-        this.state = {
-            price:999,
-            title:'Mobile Phone',
-            Qty:1,
-            img:''
-        }
-
-        
-    }
-
     IncreasechangeState = () => 
     {
         
@@ -89,7 +76,7 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
     render (){              //this render() will return a JSX (javascript XML)  that will basically describe the UI of the component
         
         //object de-structuring
-        const {price,title,Qty} = this.state;
+        const {price,title,Qty} = this.props.product;
         
         return(             
             <div className='cart-item ' style={styles.container}>
