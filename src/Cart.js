@@ -16,7 +16,7 @@ const Cart = (props)=>{   //our class 'cart' is inheriting features from the com
         return(             
             <div className='cart-item ' style={styles.container}>
                 <div className='left-block'>
-                    <img style={styles.Image} alt=''/>
+                    <img style={styles.Image} src = {props.product.img} alt=''/>
                 </div>
 
                 <div className='right-block'> 
