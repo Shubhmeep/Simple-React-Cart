@@ -3,12 +3,12 @@ import React from 'react';
 
 //let's create a class component
 
-class Cart extends React.Component{   //our class 'cart' is inheriting features from the component library in react module
+const Cart = ()=>{   //our class 'cart' is inheriting features from the component library in react module
 
  
 
     //now to convert this class based component into react based component we need to use a function called render()
-    render (){              //this render() will return a JSX (javascript XML)  that will basically describe the UI of the component
+    //render (){              //this render() will return a JSX (javascript XML)  that will basically describe the UI of the component
         
         //object de-structuring
         const {price,title,Qty} = this.props.product;
@@ -46,7 +46,7 @@ class Cart extends React.Component{   //our class 'cart' is inheriting features 
             </div>   
         );
     }
-};   
+//};   
 
 
 const styles = {

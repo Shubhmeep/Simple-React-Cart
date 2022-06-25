@@ -1,31 +1,50 @@
 import React from "react";
 
 
-class Navbar extends React.Component {
-    render(){
+const Navbar = () =>{
+   
         return (
-            <div className="nav">
+            <div className="nav" style={styles.nav}>
 
-                <div>
+                <div style={styles.cartIconContainer}>
                     <img style={styles.carticon} src="https://cdn-icons-png.flaticon.com/512/2331/2331966.png" alt="cart-icon"/>
-                    <span>3</span>
+                    <span style={styles.cartCount}>3</span>
 
                 </div>
 
             </div>
         );
     }
-}
+
 const styles = {
 
     carticon:{
-        height:32,
-        marginRight:20
+        height:40,
+        marginRight:50,
     },
-    container: {
-        display: 'inline-flex',
-        margin: 20,
+    nav:{
+        height:70,
+        background:'#4267b2',
+        display:'flex',
+        justifyContent:'flex-end',
+        alignItems:'center'
+
     },
+    cartIconContainer:{
+        position:'absolute',
+        
+    },
+    cartCount:{
+        background:'yellow',
+        borderRadius:'50%',
+        padding:'4px 8px',
+        position:'absolute',
+        right:30,
+        top:-9
+     
+      
+    }
+
 
 };
 
