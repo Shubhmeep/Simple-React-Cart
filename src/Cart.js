@@ -3,7 +3,7 @@ import React from 'react';
 
 //let's create a class component
 
-const Cart = ()=>{   //our class 'cart' is inheriting features from the component library in react module
+const Cart = (props)=>{   //our class 'cart' is inheriting features from the component library in react module
 
  
 
@@ -11,7 +11,7 @@ const Cart = ()=>{   //our class 'cart' is inheriting features from the componen
     //render (){              //this render() will return a JSX (javascript XML)  that will basically describe the UI of the component
         
         //object de-structuring
-        const {price,title,Qty} = this.props.product;
+        const {price,title,Qty} = props.product;
         
         return(             
             <div className='cart-item ' style={styles.container}>
@@ -29,12 +29,12 @@ const Cart = ()=>{   //our class 'cart' is inheriting features from the componen
 
                         <img alt='increase' className='action-icons' 
                             src='https://cdn-icons-png.flaticon.com/512/1828/1828574.png'
-                            onClick={() => this.props.IncreasechangeState(this.props.product) }/>     {/*here e are storing the reference of the changeState() in onclick var*/}
+                            onClick={() => props.IncreasechangeState(props.product) }/>     {/*here e are storing the reference of the changeState() in onclick var*/}
 
 
                         <img alt='decrease' className='action-icons' 
                         src='https://cdn-icons-png.flaticon.com/512/334/334047.png' 
-                        onClick={() => this.props.DecreasechangeState(this.props.product) }/> 
+                        onClick={() => props.DecreasechangeState(props.product) }/> 
 
 
                         <img alt='delete' className='action-icons' src='https://cdn-icons-png.flaticon.com/512/6861/6861362.png'/>
